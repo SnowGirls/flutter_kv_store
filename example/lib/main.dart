@@ -92,22 +92,21 @@ class _MyAppState extends State<MyApp> {
       var okStrValue1 = await normal.getString("__ok_string__");
       await normal.setString("__ok_string__", "💯💯💯💯💯💯");
       var okStrValue2 = await normal.getString("__ok_string__");
-      normal.removeKey("__ok_string__");
+      await normal.removeKey("__ok_string__");
       var okStrValueNull = await normal.getString("__ok_string__");
 
       await normal.setInt("__ok_int__", 100096666666);
       var okIntValue1 = await normal.getInt("__ok_int__");
       await normal.setInt("__ok_int__", 777777777777);
       var okIntValue2 = await normal.getInt("__ok_int__");
-      normal.removeKey("__ok_int__");
+      await normal.removeKey("__ok_int__");
       var okIntValueNull = await normal.getInt("__ok_int__");
-
 
       await normal.setDouble("__ok_double__", 1009.888);
       var okDoubleValue1 = await normal.getDouble("__ok_double__");
       await normal.setDouble("__ok_double__", 888888.000999);
       var okDoubleValue2 = await normal.getDouble("__ok_double__");
-      normal.removeKey("__ok_double__");
+      await normal.removeKey("__ok_double__");
       var okDoubleValueNull = await normal.getDouble("__ok_double__");
 
       print(''
@@ -116,6 +115,11 @@ class _MyAppState extends State<MyApp> {
           ' okInt: $okIntValue1, $okIntValue2, null? $okIntValueNull(${okIntValueNull == null})'
           ' okDouble: $okDoubleValue1, $okDoubleValue2, null? $okDoubleValueNull(${okDoubleValueNull == null})'
           '');
+
+      await normal.removeKey("__ok_double__");
+      await normal.removeKey("__ok_double__");
+      await normal.removeKey("__not_existed_key__");
+      print('######## DONE #########');
     }
   }
 }

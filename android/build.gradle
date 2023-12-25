@@ -64,7 +64,7 @@ android {
 
 allprojects {
     dependencies {
-//        api 'com.github.SnowGirls:Xlightweight-Store-Android:0.0.1'             // local
+        // api 'com.github.SnowGirls:Xlightweight-Store-Android:0.0.1'             // local
         api 'com.github.SnowGirls:Xlightweight-Store-Android:v0.0.1-beta.8'     // jitpack.io
     }
 }
